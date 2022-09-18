@@ -1,0 +1,12 @@
+{
+    "name": "Packages/PluginClone",
+    "description": "This is the basic package for cloning the new required packages",
+    "authors": [
+        {
+            "name": "shift",
+            "email": "info@shiftict.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

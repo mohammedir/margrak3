@@ -1,0 +1,67 @@
+{
+  "name": "laravel/laravel",
+  "description": "The Laravel Framework.",
+  "keywords": [
+    "framework",
+    "laravel"
+  ],
+  "license": "MIT",
+  "type": "project",
+  "require": {
+    "pusher/pusher-php-server": "^2.6",
+    "tymon/jwt-auth": "0.5.*",
+    "vinkla/pusher": "^2.4",
+    "gumlet/php-image-resize": "1.8.*"
+  },
+  "require-dev": {
+    "fzaninotto/faker": "~1.4",
+    "mockery/mockery": "0.9.*",
+    "phpunit/phpunit": "~5.0",
+    "symfony/css-selector": "3.1.*",
+    "symfony/dom-crawler": "3.1.*"
+  },
+  "autoload": {
+    "classmap": [
+      "database"
+    ],
+    "psr-4": {
+      "App\\": "app/",
+      "Packages\\PluginClone\\": "packages/pluginclone/src",
+      "Packages\\Category\\": "packages/Category/src",
+      "Packages\\System\\": "packages/System/src",
+      "Packages\\RecentAdd\\": "packages/RecentAdd/src",
+      "Packages\\Adds\\": "packages/Adds/src",
+      "Packages\\Users\\": "packages/Users/src",
+      "Packages\\SideList\\": "packages/SideList/src",
+      "Packages\\Block\\": "packages/Block/src",
+      "Packages\\Template\\": "packages/Template/src",
+      "Packages\\Announcement\\": "packages/Announcement/src",
+      "Packages\\Matger\\": "packages/Matger/src"
+    }
+  },
+  "autoload-dev": {
+    "classmap": [
+      "tests/TestCase.php"
+    ]
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ],
+    "post-create-project-cmd": [
+      "php artisan key:generate"
+    ],
+    "post-install-cmd": [
+      "Illuminate\\Foundation\\ComposerScripts::postInstall",
+      "php artisan optimize"
+    ],
+    "post-update-cmd": [
+      "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+      "php artisan optimize"
+    ]
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true
+  }
+}
